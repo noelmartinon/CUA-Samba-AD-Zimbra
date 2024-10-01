@@ -1,0 +1,31 @@
+{
+  "name": "${MAIL}",
+  "password": "${MAILPASSWORD}",
+  "givenName": "${FIRSTNAME}",
+  "sn": "${SURNAME}",
+  "displayName": "${SURNAME} ${FIRSTNAME}",
+  "memberofList": [${DISTRIBLISTS_JSON}],
+  "signature": {
+    "name": "Signature par d\u00e9faut",
+    "type": "text/html",
+    "url": "https://myserver.tld/signature.php?mail=${MAIL}",
+    "checkContent": "a text to be find in generated email signature to check its ok"
+  },
+  "link": [
+    {
+      "target": "/",
+      "name": "FolderName_pointing_to_a_share",
+      "ownerEmail": "owner_of_share@myemaildomain.tld",
+      "folderPath": "/Inbox/FOLDERNAME"
+    }
+  ],
+  "calendar": [
+    {
+      "folder": "/Calendar",
+      "shareEmail": "alluers@myemaildomain.tld",
+      "granteeType": "grp",
+      "perm": "r"
+    }
+  ],
+  "mailDelete": "in:inbox is:unread subject:\"Partage créé\""
+}

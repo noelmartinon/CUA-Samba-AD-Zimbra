@@ -1,0 +1,6 @@
+{
+    "domain": "myemaildomain.tld",
+    "url": "https://myzimbra-server.tld:7071/service/admin/soap",
+    "admin_username": "adminzimbra@myemaildomain.tld",
+    "admin_password": "******************************"
+}
