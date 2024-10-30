@@ -259,7 +259,7 @@ read -r -d '' account_info <<< `envsubst < "${SCRIPT_DIR}/cua_mail_account_info.
 account_info_b64=$(echo -n ${account_info} | base64 -w 0)
 
 # Execute command to create mail account
-echo "$(/usr/bin/python3 /opt/cua-samba-ad-zimbra/zimbra_createaccount.py ${account_info_b64})"
+echo "$(/usr/bin/python3 ${SCRIPT_DIR}/zimbra_createaccount.py ${account_info_b64})"
 else
 echo "Processus de création du mail non exécutée"
 fi
