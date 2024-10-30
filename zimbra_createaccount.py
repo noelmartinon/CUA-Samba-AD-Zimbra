@@ -19,6 +19,7 @@
 ###############################################################################
 
 import sys
+import os
 import base64
 import json
 from pathlib import Path
@@ -33,14 +34,17 @@ def main():
             exit(1)
         try:
             account_info = json.loads(base64.b64decode(sys.argv[1]))
-            print(json.dumps(account_info, indent=2))
+            # ~ print(json.dumps(account_info, indent=2))
         except:
             print('Erreur de chargement des paramètres json du compte')
             exit(1)
 
-        config_file = 'zimbra_config.json'
+        script_directory = os.path.dirname(os.path.realpath(__file__))
+        config_file = script_directory + '/zimbra_config.json'
         if not Path(config_file).is_file():
-            config_file = 'inc/'+config_file
+            config_file = script_directory + '/inc/zimbra_config.json'
+            if not Path(config_file).is_file():
+                print('Impossible de trouver le fichier de configuration zimbra_config.json')
 
         with open(config_file, 'r') as jsonfile:
             config = json.load(jsonfile)
