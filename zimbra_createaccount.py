@@ -24,6 +24,7 @@ import base64
 import json
 from pathlib import Path
 import xml.dom.minidom
+import requests
 from zimbrasoap import ZimbraSoap
 
 
